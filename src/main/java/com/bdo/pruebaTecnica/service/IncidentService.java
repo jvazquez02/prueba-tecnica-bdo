@@ -51,7 +51,7 @@ public class IncidentService {
         }
         Incidence incidence = incidentRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Incident was not found."));
-        if (incidence.getStatus() == Incidence.Status.CLOSED) {
+        if (incidence.getStatus() == Incidence.Status.CLOSED && newStatus != Incidence.Status.CLOSED) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Closed incidents cannot be reopened.");
         }
         incidence.setStatus(newStatus);

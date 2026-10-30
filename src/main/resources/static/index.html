@@ -81,7 +81,7 @@
 
         console.log({incident});
         try {
-            const response = await fetch(PRE_URL+'/api/incidents/create', {
+            const response = await fetch(PRE_URL + '/api/incidents', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(incident)
@@ -105,7 +105,7 @@
         $('#tableIncidentBody').empty();
 
         try {
-            const response = await fetch(PRE_URL + '/api/incidents/findAll');
+            const response = await fetch(PRE_URL + '/api/incidents');
             if (!response.ok) {
                 throw new Error(`The API returned ${response.status}.`);
             }

@@ -21,8 +21,8 @@ La base de datos y las tablas se crean al arrancar. La página está en `http://
 
 ## API
 
-- `POST /api/incidents/create`: crea una incidencia en estado `OPEN`.
-- `GET /api/incidents/findAll`: lista las incidencias. Se puede filtrar con `?status=OPEN`.
+- `POST /api/incidents`: crea una incidencia en estado `OPEN`.
+- `GET /api/incidents`: lista las incidencias. Se puede filtrar con `?status=OPEN`.
 - `PATCH /api/incidents/{id}/status`: cambia el estado. No permite reabrir una incidencia cerrada.
 
 Los estados son `OPEN`, `IN_PROGRESS` y `CLOSED`. Las prioridades son `LOW`, `MEDIUM` y `HIGH`.

@@ -16,13 +16,13 @@ public class IncidentController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping("create")
     @ResponseStatus(HttpStatus.CREATED)
     public Incidence create(@RequestBody Incidence incidence) {
         return service.create(incidence);
     }
 
-    @GetMapping
+    @GetMapping("/findAll")
     public List<Incidence> findAll(@RequestParam(required = false) Incidence.Status status) {
         return service.findAll(status);
     }

@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/incidents")
+@CrossOrigin(origins = "http://localhost:63343")
 public class IncidentController {
     private final IncidentService service;
 
